@@ -2,4 +2,5 @@
 /shelf/
 /workspace.xml
 /target/
-/.idea/libraries/
+/.idea/libraries/workspace.xml
+/libraries/
