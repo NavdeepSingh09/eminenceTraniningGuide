@@ -4,8 +4,6 @@
  * Time: 2:55 p.m.
  */
 package webdriver.api.commands;
-
-import apple.laf.JRSUIConstants;
 import common.CommonConfig;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
