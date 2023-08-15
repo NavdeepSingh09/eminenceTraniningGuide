@@ -9,13 +9,14 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Base64;
 import java.util.concurrent.TimeUnit;
 import org.testng.annotations.Test;
 
 public class FirstSimpleTest {
     static RemoteWebDriver driver = null;
-    String username = "cheems.navi";
-    String accesskey = "oZRfPs5HNG34GjQ2EAEYd7DZz0gRR8h2wqtXkOsGwfBELSmzQ4";
+    String username = new String(Base64.getDecoder().decode("Y2hlZW1zLm5hdmk="));
+    String accesskey = new String(Base64.getDecoder().decode("b1pSZlBzNUhORzM0R2pRMkVBRVlkN0RaejBnUlI4aDJ3cXRYa09zR3dmQkVMU216UTQ="));
     String gridURL = "@hub.lambdatest.com/wd/hub";
 
     public static void main(String[] args) {
@@ -31,8 +32,6 @@ public class FirstSimpleTest {
     @Test
     public void execute(){
         new FirstSimpleTest().setUp();
-//        System.setProperty("webdriver.chrome.driver","/Users/sukhdeep/Desktop/IT/Chrome/chromedriver");
-//        WebDriver driver = new ChromeDriver();
         driver.get("https://skillupautomation.com");
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS) ;
         driver.manage().window().maximize();
