@@ -19,7 +19,7 @@ public class GetCurrentUrl extends CommonConfig {
 
         System.setProperty("webdriver.chrome.driver", chromePath());
         driver = new ChromeDriver();
-        driver.get("https://www.eminenceautomationlabs.com/");
+        driver.get("https://www.skillupautomation.com/");
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         System.out.println("Page URL = " + getCurrentURL());
