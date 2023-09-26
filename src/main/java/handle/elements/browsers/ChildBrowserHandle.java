@@ -44,6 +44,7 @@ public class ChildBrowserHandle extends CommonConfig {
             String ChildWindow = iterator.next();
             if (!mainWindowHandle.equalsIgnoreCase(ChildWindow)) {
                 driver.switchTo().window(ChildWindow);
+                driver.manage().window().maximize();
                 WebElement text = driver.findElement(By.id("sampleHeading"));
                 System.out.println("Heading of child window is: " + text.getText());
             }

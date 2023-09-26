@@ -38,7 +38,7 @@ public class Fluent extends CommonConfig {
     private static void fluentWait() throws InterruptedException {
         // Fluent wait deceleration here
         Wait<WebDriver> fluentWait= new FluentWait<>(driver)
-                .withTimeout(Duration.ofSeconds(15))
+                .withTimeout(Duration.ofSeconds(20))
                 .pollingEvery(Duration.ofSeconds(5))
                 .ignoring(NoSuchElementException.class, TimeoutException.class);
         System.out.println("Fluent wait here for maximum 15 seconds but polling every 5 seconds until visible of element");

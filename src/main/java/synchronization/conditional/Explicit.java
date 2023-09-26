@@ -34,6 +34,7 @@ public class Explicit extends CommonConfig {
         WebDriverWait wait = new WebDriverWait(driver, 10);
         System.out.println("Explicit wait here for maximum 10 second to visible of element");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[@class='mt-3']")));
+//        driver.findElement(By.xpath("//p[@class='mt-3']")).isEnabled();
         System.out.println("Explicit wait is over");
     }
 

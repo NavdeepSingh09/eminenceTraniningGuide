@@ -28,17 +28,13 @@ public class Unconditional extends CommonConfig {
     }
 
     private static boolean isEnabled() throws InterruptedException {
-        try {
             System.out.println("Execution will pause for 5 sec");
-            Thread.sleep(5000);
+//            Thread.sleep(10000);
             if(driver.findElement(By.xpath("//p[@class='mt-3']")).isEnabled()){
                 return true;
             }else{
                 return false;
             }
-        } catch (NoSuchElementException e) {
-            return false;
-        }
     }
 
     private static void tearDown(WebDriver driver) {

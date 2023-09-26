@@ -41,7 +41,7 @@ public class SelectOption1 extends CommonConfig {
         // Create object of the Select class
         Select se = new Select(driver.findElement(By.xpath("//*[@id='oldSelectMenu']")));
         // Select the option with value "5"
-        se.selectByValue("5");
+        se.selectByValue("red");
     }
 
     private static void selectByVisibleText() throws InterruptedException {
@@ -50,7 +50,8 @@ public class SelectOption1 extends CommonConfig {
         se.selectByVisibleText("White");
     }
 
-    private static void tearDown(WebDriver driver) {
+    private static void tearDown(WebDriver driver) throws InterruptedException {
+        Thread.sleep(5000);
         driver.close();
     }
 }

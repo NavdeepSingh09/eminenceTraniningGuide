@@ -27,7 +27,7 @@ public class SelectOption3 extends CommonConfig {
         driver.manage().window().maximize();
         deselectAll();
         deselectByIndex();
-//        deselectByValue(); //value is not available in DOM
+        deselectByValue();
         deselectByVisibleText();
         tearDown(driver);
     }
@@ -46,10 +46,11 @@ public class SelectOption3 extends CommonConfig {
         select.deselectByIndex(0);
     }
 
-    //Value is not available in DOM
     private static void deselectByValue() throws InterruptedException {
         Select select = new Select(driver.findElement(By.id("cars")));
-        select.deselectByValue("1");
+        select.selectByVisibleText("Volvo");
+        select.selectByVisibleText("Saab");
+        select.deselectByValue("volvo");
     }
 
     private static void deselectByVisibleText() {
