@@ -55,8 +55,8 @@ public class HandleKeyboardEvents extends CommonConfig {
         actions.keyUp(Keys.COMMAND);
         actions.build().perform();
 //Press the TAB Key to Switch Focus to Permanent Address
-        actions.sendKeys(Keys.TAB);
-        actions.build().perform();
+//        actions.sendKeys(Keys.TAB);
+//        actions.build().perform();
         //Compare Text of current Address and Permanent Address
         WebElement permanentAddress = driver.findElement(By.id("permanentAddress"));
         permanentAddress.click();
@@ -66,9 +66,10 @@ public class HandleKeyboardEvents extends CommonConfig {
         actions.keyUp(Keys.COMMAND);
         actions.build().perform();
         assertEquals(currentAddress.getAttribute("value"), permanentAddress.getAttribute("value"));
+        Thread.sleep(3000);
     }
 
-    private static void chainingKeyboardEvents() {
+    private static void chainingKeyboardEvents() throws InterruptedException {
         Actions actions = new Actions(driver);
         // Enter the Full Name
         WebElement fullName = driver.findElement(By.id("userName"));
@@ -97,6 +98,7 @@ public class HandleKeyboardEvents extends CommonConfig {
         //Paste the Address in the Permanent Address field
         actions.keyDown(Keys.COMMAND).sendKeys("v").keyUp(Keys.COMMAND).build().perform();
         assertEquals(currentAddress.getAttribute("value"), permanentAddress.getAttribute("value"));
+        Thread.sleep(3000);
     }
 
     private static void tearDown(WebDriver driver) {

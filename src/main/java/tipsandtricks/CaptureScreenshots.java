@@ -32,18 +32,18 @@ public class CaptureScreenshots extends CommonConfig {
         driver.get("https://www.eminenceautomationlabs.com/");
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().window().maximize();
-//        captureScreenshotsVisiblePage();
+//        captureScreenshotsVisiblePage("Gagan");
 //        captureScreenshotsFullPage();
         captureScreenshotsElementOnly();
         tearDown(driver);
     }
 
-    private static void captureScreenshotsVisiblePage() {
+    private static void captureScreenshotsVisiblePage(String NameOfScreenShot) {
         File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 
         //Copy the file to a location and use try catch block to handle exception
         try {
-            FileUtils.copyFile(screenshot, new File("/Users/sukhdeep/Desktop/IT/Screenshots/homePageScreenshot.png"));
+            FileUtils.copyFile(screenshot, new File("/Users/sukhdeep/Desktop/IT/Screenshots/"+NameOfScreenShot+".png"));
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
@@ -52,7 +52,7 @@ public class CaptureScreenshots extends CommonConfig {
     private static void captureScreenshotsFullPage() {
         Screenshot s = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(driver);
         try {
-            ImageIO.write(s.getImage(), "PNG", new File("/Users/sukhdeep/Desktop/IT/Screenshots/homePageScreenshotFullPage.png"));
+            ImageIO.write(s.getImage(), "JPEG", new File("/Users/sukhdeep/Desktop/IT/Screenshots/homePageScreenshotFullPage.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }

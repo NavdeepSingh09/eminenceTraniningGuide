@@ -28,6 +28,7 @@ public class Scrolling extends CommonConfig {
         driver.get("https://www.aircanada.com/ca/en/aco/home.html");
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().window().maximize();
+        Thread.sleep(3000);
 //        scrollMethodsByPixelsDown();
 //        scrollMethodsByPixelsUp();
 //        scrollUntilElementVisible();
@@ -36,23 +37,26 @@ public class Scrolling extends CommonConfig {
         tearDown();
     }
 
-    private static void scrollMethodsByPixelsDown() {
+    private static void scrollMethodsByPixelsDown() throws InterruptedException {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,350)", "");
+        Thread.sleep(2000);
     }
 
-    private static void scrollMethodsByPixelsUp() {
+    private static void scrollMethodsByPixelsUp() throws InterruptedException {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,-350)", "");
+        Thread.sleep(2000);
     }
 
-    private static void scrollUntilElementVisible(){
+    private static void scrollUntilElementVisible() throws InterruptedException {
         //Locating element by xpath and store in variable "Element"
         WebElement Element = driver.findElement(By.xpath("//div[@class='ngx-ac-footer-copyright ng-star-inserted']"));
 
         // Scrolling down the page till the element is found
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView(true);", Element);
+        Thread.sleep(2000);
     }
 
     private static void scrollBottomOfPage(){
@@ -69,7 +73,8 @@ public class Scrolling extends CommonConfig {
         js.executeScript("arguments[0].scrollIntoView({ behavior: \"smooth\", block: \"end\", inline: \"nearest\" });", Element);
     }
 
-    private static void tearDown() {
+    private static void tearDown() throws InterruptedException {
+        Thread.sleep(5000);
         driver.close();
     }
 }

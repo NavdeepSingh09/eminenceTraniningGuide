@@ -5,6 +5,7 @@
  */
 package tipsandtricks;
 
+import com.gargoylesoftware.htmlunit.BrowserVersion;
 import common.CommonConfig;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -29,7 +30,8 @@ public class Headless extends CommonConfig {
     private static void HeadlessDefaultBrowser(){
 
         // Declaring and initialising the HtmlUnitWebDriver
-        HtmlUnitDriver unitDriver = new HtmlUnitDriver();
+//        HtmlUnitDriver unitDriver = new HtmlUnitDriver();
+        HtmlUnitDriver unitDriver=new HtmlUnitDriver(BrowserVersion.CHROME,true);
 
         // open demo site webpage
         unitDriver.get("https://www.eminenceautomationlabs.com/");

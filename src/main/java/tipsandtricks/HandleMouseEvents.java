@@ -22,10 +22,10 @@ public class HandleMouseEvents extends CommonConfig {
 
         System.setProperty("webdriver.chrome.driver", chromePath());
         driver = new ChromeDriver();
-        driver.get("https://demoqa.com/slider/"); //  https://demoqa.com/menu/
+        driver.get("https://demoqa.com/slider/"); //  https://demoqa.com/slider/    https://demoqa.com/menu/"
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().window().maximize();
-        //moveCursorMiddleOfElement();
+//        moveCursorMiddleOfElement();
         moveCursorOffset();
         tearDown(driver);
     }
@@ -52,13 +52,14 @@ public class HandleMouseEvents extends CommonConfig {
 
     }
 
-    private static void moveCursorOffset(){
+    private static void moveCursorOffset() throws InterruptedException {
         Actions actions = new Actions(driver);
         //Retrieve WebElemnt 'slider' to perform mouse hover
         WebElement slider = driver.findElement(By.xpath("//input[@class='range-slider range-slider--primary']"));
         //Move mouse to x offset 50 i.e. in horizontal direction
         actions.moveToElement(slider,50,0).perform();
         slider.click();
+        Thread.sleep(5000);
         System.out.println("Moved slider in horizontal directions");
     }
 
