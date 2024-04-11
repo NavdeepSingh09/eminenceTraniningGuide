@@ -57,7 +57,7 @@ public class HandleMouseEvents extends CommonConfig {
         //Retrieve WebElemnt 'slider' to perform mouse hover
         WebElement slider = driver.findElement(By.xpath("//input[@class='range-slider range-slider--primary']"));
         //Move mouse to x offset 50 i.e. in horizontal direction
-        actions.moveToElement(slider,50,0).perform();
+        actions.dragAndDropBy(slider,0,50).perform();
         slider.click();
         Thread.sleep(5000);
         System.out.println("Moved slider in horizontal directions");
