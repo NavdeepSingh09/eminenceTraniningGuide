@@ -4,6 +4,8 @@
     <test verbose="2" preserve-order="true" name="/Users/sukhdeep/IdeaProjects/eminenceTrainingGuide">
         <classes>
             <class name="run.first.test.cloud.FirstSimpleTest"></class>
+            
+
         </classes>        
     </test>
 </suite>
