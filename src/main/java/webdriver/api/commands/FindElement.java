@@ -23,7 +23,7 @@ public class FindElement extends CommonConfig {
 
         System.setProperty("webdriver.chrome.driver", chromePath());
         driver = new ChromeDriver();
-        driver.get("https://www.eminenceautomationlabs.com/");
+        driver.get("https://skillupautomation.com/");
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         findElement();
@@ -32,14 +32,14 @@ public class FindElement extends CommonConfig {
     }
 
     private static void findElement() {
-        String dropdownName = driver.findElement(By.xpath("(//a[@id='collasible-nav-dropdown'])[1]")).getText();
-        System.out.println("Name of Dropdown = " + dropdownName);
+        String dropdownName = driver.findElement(By.xpath("(//ul[@class='wp-block-navigation__container is-responsive items-justified-center wp-block-navigation']//li//span[@class='wp-block-navigation-item__label'])[1]")).getText();
+        System.out.println("Name of Navigation bar = " + dropdownName);
     }
 
     private static void findElements() {
-        List<WebElement> listElement = driver.findElements(By.xpath("(//a[@id='collasible-nav-dropdown'])"));
+        List<WebElement> listElement = driver.findElements(By.xpath("(//ul[@class='wp-block-navigation__container is-responsive items-justified-center wp-block-navigation']//li//span[@class='wp-block-navigation-item__label'])"));
         for (int i = 0; i < listElement.size(); i++) {
-            System.out.println("List view dropdown name = " + listElement.get(i).getText());
+            System.out.println("List available labels name = " + listElement.get(i).getText());
         }
     }
 

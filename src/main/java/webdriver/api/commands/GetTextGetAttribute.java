@@ -20,7 +20,7 @@ public class GetTextGetAttribute extends CommonConfig {
 
         System.setProperty("webdriver.chrome.driver", chromePath());
         driver = new ChromeDriver();
-        driver.get("https://www.eminenceautomationlabs.com/discover#contactus");
+        driver.get("https://demoqa.com/text-box");
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         getTextGetAttribute();
@@ -28,10 +28,10 @@ public class GetTextGetAttribute extends CommonConfig {
     }
 
     private static void getTextGetAttribute() throws InterruptedException {
-        String textName = driver.findElement(By.xpath("(//label[@class='amplify-label'])[1]")).getText();
+        String textName = driver.findElement(By.id("userName-label")).getText();
         System.out.println("Label Text = " + textName);
         Thread.sleep(3000);
-        String placeHolderName = driver.findElement(By.xpath("//textarea")).getAttribute("placeholder");
+        String placeHolderName = driver.findElement(By.xpath("//input[@id='userName']")).getAttribute("placeholder");
         System.out.println("Placeholder Name = " + placeHolderName);
         Thread.sleep(3000);
     }

@@ -22,7 +22,7 @@ public class SendKeysClearClick extends CommonConfig {
 
         System.setProperty("webdriver.chrome.driver", chromePath());
         driver = new ChromeDriver();
-        driver.get("https://www.eminenceautomationlabs.com/discover#contactus");
+        driver.get("https://skillupautomation.com/register/");
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         sendKeysClearClick();
@@ -30,11 +30,11 @@ public class SendKeysClearClick extends CommonConfig {
     }
 
     private static void sendKeysClearClick() throws InterruptedException {
-        driver.findElement(By.xpath("//textarea")).sendKeys("Automation Course");
+        driver.findElement(By.xpath("//input[@id='g114-name']")).sendKeys("Automation Course");
         Thread.sleep(3000);
-        driver.findElement(By.xpath("//textarea")).clear();
+        driver.findElement(By.xpath("//input[@id='g114-name']")).clear();
         Thread.sleep(3000);
-        driver.findElement(By.xpath("(//img)[1]")).click();
+        driver.findElement(By.xpath("//button[text()='Send']")).click();
         Thread.sleep(3000);
     }
 
