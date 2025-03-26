@@ -34,7 +34,7 @@ public class Headless extends CommonConfig {
         HtmlUnitDriver unitDriver=new HtmlUnitDriver(BrowserVersion.CHROME,true);
 
         // open demo site webpage
-        unitDriver.get("https://www.eminenceautomationlabs.com/");
+        unitDriver.get("https://www.skillupautomation.com/");
 
         //Print the title of the page
         System.out.println("Title of the page is -> " + unitDriver.getTitle());
@@ -55,7 +55,7 @@ public class Headless extends CommonConfig {
         WebDriver driver = new ChromeDriver(options);
 
         //Navigate to Eminence site url
-        driver.get("https://www.eminenceautomationlabs.com/");
+        driver.get("https://www.skillupautomation.com/");
 
         //Print the Title of the Page
         System.out.println("Title of the page is -> " + driver.getTitle());

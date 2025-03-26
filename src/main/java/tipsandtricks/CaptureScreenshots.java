@@ -29,7 +29,7 @@ public class CaptureScreenshots extends CommonConfig {
 
         System.setProperty("webdriver.chrome.driver", chromePath());
         driver = new ChromeDriver();
-        driver.get("https://www.eminenceautomationlabs.com/");
+        driver.get("https://www.skillupautomation.com/");
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().window().maximize();
 //        captureScreenshotsVisiblePage("Gagan");
@@ -60,7 +60,7 @@ public class CaptureScreenshots extends CommonConfig {
 
     private static void captureScreenshotsElementOnly() throws IOException {
         // Locate the element on the web page
-        WebElement logo = driver.findElement(By.xpath("//img[contains(@src,'Logo')]"));
+        WebElement logo = driver.findElement(By.xpath("//img[contains(@alt,'SUA')]"));
 
         // Get screenshot of the visible part of the web page
         File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
