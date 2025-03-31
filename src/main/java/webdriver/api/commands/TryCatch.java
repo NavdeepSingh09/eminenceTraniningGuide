@@ -17,15 +17,15 @@ import java.util.concurrent.TimeUnit;
 public class TryCatch extends CommonConfig {
     static WebDriver driver;
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
         System.setProperty("webdriver.chrome.driver", chromePath());
         driver = new ChromeDriver();
-        driver.get("https://demoqa.com/radio-button");
+//        driver.get("https://demoqa.com/radio-button");
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.manage().window().maximize();
-//        tryCatchTwo();
-        tryCatchThree();
-        tearDown(driver);
+        tryCatchTwo();
+//        tryCatchThree();
+//        tearDown(driver);
     }
 
     private static void tearDown(WebDriver driver) {
@@ -56,24 +56,32 @@ public class TryCatch extends CommonConfig {
         }
     }
 
-    private static boolean tryCatchTwo () {
+    private static void  tryCatchTwo () {
         try {
             int ar[] = { 1, 2 };
             for (int i = 0; i <= 7; i++)
                 System.out.println(ar[i]);
+            Thread.sleep(2000);
         } catch(NoSuchElementException e){
-            return false;
+
         } catch(ArrayIndexOutOfBoundsException e){
-            return false;
+
         }
-        return false;
+        catch(InterruptedException e){
+
+        }
+        System.out.println("trueeee");
+
     }
 
-    private static void tryCatchThree() throws ArrayIndexOutOfBoundsException {
+    private static void tryCatchThree() throws ArrayIndexOutOfBoundsException, InterruptedException {
         int ar[] = {1, 2};
         for (int i = 0; i <= 7; i++) {
             System.out.println(ar[i]);
+                Thread.sleep(2000);
         }
+        System.out.println("trueeee");
+
     }
 
 }
