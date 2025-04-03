@@ -23,9 +23,10 @@ public class Implicit extends CommonConfig {
         driver = new ChromeDriver();
         driver.get("https://demoqa.com/radio-button");
         // Implicit wait declaration
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         System.out.println("Is this element enabled = "+isEnabled());
+        isEnabled();
         tearDown(driver);
     }
 
@@ -37,6 +38,7 @@ public class Implicit extends CommonConfig {
                 return false;
             }
         }catch(NoSuchElementException e){
+            e.printStackTrace();
             return false;
         }
     }
