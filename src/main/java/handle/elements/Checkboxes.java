@@ -26,6 +26,7 @@ public class Checkboxes extends CommonConfig {
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         selectCheckBoxBestPractise();
+        deSelectCheckBoxBestPractise();
         Thread.sleep(10000);
         tearDown(driver);
     }
@@ -33,6 +34,15 @@ public class Checkboxes extends CommonConfig {
     private static void selectCheckBoxBestPractise() throws InterruptedException {
         WebElement checkBoxElement = driver.findElement(By.xpath("(//input[@type='checkbox'])[1]"));
         if(!checkBoxElement.isSelected()){
+            //checkBoxElement.click();
+            JavascriptExecutor js = (JavascriptExecutor)driver;
+            js.executeScript("arguments[0].click();", checkBoxElement);
+        }
+    }
+
+    private static void deSelectCheckBoxBestPractise() throws InterruptedException {
+        WebElement checkBoxElement = driver.findElement(By.xpath("(//input[@type='checkbox'])[1]"));
+        if(checkBoxElement.isSelected()){
             //checkBoxElement.click();
             JavascriptExecutor js = (JavascriptExecutor)driver;
             js.executeScript("arguments[0].click();", checkBoxElement);
