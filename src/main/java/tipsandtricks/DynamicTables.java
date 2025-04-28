@@ -33,7 +33,7 @@ public class DynamicTables extends CommonConfig {
     private static void checkDynamicTable(WebDriver driver) {
         // Find Number oÒf Columns
         List<WebElement> columnsNumber = driver.findElements(By.xpath("//table//tbody//tr"));
-        System.out.println("Number of Columns = " + columnsNumber.size());
+        System.out.println("Number of Columns1 = " + columnsNumber.size());
 
         // Find Number of Rows
         List<WebElement> rowsNumber = driver.findElements(By.xpath("//table//tbody//tr/td"));

@@ -44,6 +44,7 @@ public class HandleKeyboardEvents extends CommonConfig {
 // Enter the Current Address
         WebElement currentAddress = driver.findElement(By.id("currentAddress"));
         currentAddress.sendKeys("50 Cutters Crescent Brampton");
+        currentAddress.click();
 // Select the Current Address using CMD + A
         actions.keyDown(Keys.COMMAND);
         actions.sendKeys("a");
@@ -83,6 +84,7 @@ public class HandleKeyboardEvents extends CommonConfig {
         WebElement currentAddress = driver.findElement(By.id("currentAddress"));
 
         currentAddress.sendKeys("50 Cutters Crescent Brampton");
+        currentAddress.click();
         // Select the Current Address
         actions.keyDown(Keys.COMMAND).sendKeys("a").keyUp(Keys.COMMAND).build().perform();
 

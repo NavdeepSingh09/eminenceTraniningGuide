@@ -41,6 +41,7 @@ public class RightDoubleClick extends CommonConfig {
         //Right Click the button to display Context Menu&nbsp;
         actions.contextClick(btnElement).perform();
         System.out.println("Right click Context Menu displayed");
+        Thread.sleep(5000);
     }
 
     private static void doubleClickPage() throws InterruptedException {
@@ -54,6 +55,7 @@ public class RightDoubleClick extends CommonConfig {
         actions.doubleClick(btnElement).perform();
 
         System.out.println("Button is double clicked");
+        Thread.sleep(5000);
     }
 
     private static void tearDown(WebDriver driver) {

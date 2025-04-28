@@ -32,7 +32,7 @@ public class HandleDatePickers extends CommonConfig {
     }
 
     private static void handleDate(WebDriver driver) throws InterruptedException {
-        driver.findElement(By.xpath("//input[@aria-label='Departure']")).click();
+        driver.findElement(By.xpath("(//input[@placeholder='DD/MM'])[1]")).click();//click on departure date picker
         Thread.sleep(2000);
         Date d = new Date(1);
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MMMM-yyyy");//  there are many patterns of the date are available, you can try different one at home
@@ -50,10 +50,10 @@ public class HandleDatePickers extends CommonConfig {
     public static void selectDate(String month_year, String select_day) throws InterruptedException {
         do{
             driver.findElement(By.xpath("//button[@aria-label='Next month']")).click();
-        }while(!driver.findElement(By.xpath("(//table[@class='abc-calendar-month ng-star-inserted']/caption)[2]")).getText().contains(month_year));
+        }while(!driver.findElement(By.xpath("(//table[@class='abc-calendar-month']/caption)[2]")).getText().contains(month_year));
 
         // click on day
-        List<WebElement> element=driver.findElements(By.xpath("(//table[@class='abc-calendar-month ng-star-inserted']/caption)[2]/following::div[@class='date']"));
+        List<WebElement> element=driver.findElements(By.xpath("(//table[@class='abc-calendar-month']/caption)[1]/following::div[@class='abc-calendar-day']"));
         for(int i=0;i<element.size();i++){
             if(element.get(i).getText().equals(select_day)){
                 element.get(i).click();

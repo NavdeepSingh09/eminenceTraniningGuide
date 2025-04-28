@@ -23,15 +23,15 @@ import java.util.concurrent.TimeUnit;
 public class Headless extends CommonConfig {
 
     public static void main(String[] args) throws IOException, InterruptedException {
-        HeadlessDefaultBrowser();
-//        HeadlessChrome();
+//        HeadlessDefaultBrowser();
+        HeadlessChrome();
     }
 
     private static void HeadlessDefaultBrowser(){
 
         // Declaring and initialising the HtmlUnitWebDriver
 //        HtmlUnitDriver unitDriver = new HtmlUnitDriver();
-        HtmlUnitDriver unitDriver=new HtmlUnitDriver(BrowserVersion.CHROME,true);
+        HtmlUnitDriver unitDriver=new HtmlUnitDriver(BrowserVersion.CHROME,false);
 
         // open demo site webpage
         unitDriver.get("https://www.skillupautomation.com/");

@@ -34,10 +34,10 @@ public class RefreshBrowser extends CommonConfig {
 
     private static void refreshPage() throws InterruptedException {
         driver.navigate().refresh();
-        driver.findElement(By.xpath("//input[@class='navbar__search--input']")).sendKeys(Keys.F5);//works for windows
+//        driver.findElement(By.xpath("//input[@class='navbar__search--input']")).sendKeys(Keys.F5);//works for windows
         driver.get(driver.getCurrentUrl());
         driver.navigate().to(driver.getCurrentUrl());
-        driver.findElement(By.xpath("//input[@class='navbar__search--input']")).sendKeys("\uE035");//works for windows
+//        driver.findElement(By.xpath("//input[@class='navbar__search--input']")).sendKeys("\uE035");//works for windows
     }
 
     private static void tearDown(WebDriver driver) {
