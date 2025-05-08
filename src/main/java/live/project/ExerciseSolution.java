@@ -43,7 +43,7 @@ public class ExerciseSolution extends CommonConfig {
 
     private static void verifyLoginPageErrorMessage(){
         loginButton().click();
-        assertTrue(errorMessageLoginPage().getText().contains("Username is required"));
+        Assert.assertTrue(errorMessageLoginPage().getText().contains("Username is required"));
     }
 
     private static void loginWithCredentials() {
