@@ -51,6 +51,6 @@ public class ChildBrowserHandle extends CommonConfig {
         }
     }
     private static void tearDown(WebDriver driver) {
-        driver.close();
+        driver.quit();
     }
 }

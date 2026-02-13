@@ -23,14 +23,13 @@ public class Frames extends CommonConfig {
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.manage().window().maximize();
 //        switchFramesIndex();
-        switchFramesNameId();
+//        switchFramesNameId();
         switchFramesWebElement();
         tearDown(driver);
     }
 
-    //Index is not working right now with frame selection
     private static void switchFramesIndex() throws InterruptedException {
-        driver.switchTo().frame(0);
+        driver.switchTo().frame(2);
         WebElement frame1Heading = driver.findElement(By.id("sampleHeading"));
         //Finding the text of the heading
         String frame1Text = frame1Heading.getText();
