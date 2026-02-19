@@ -25,7 +25,7 @@ public class HandleKeyboardEvents extends CommonConfig {
 
         System.setProperty("webdriver.chrome.driver", chromePath());
         driver = new ChromeDriver();
-        driver.get("https://demoqa.com/text-box");
+        driver.get("https://demoqa.com");
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().window().maximize();
 //        keyboardEvents();
@@ -90,7 +90,6 @@ public class HandleKeyboardEvents extends CommonConfig {
 
         // Copy the Current Address
         actions.keyDown(Keys.COMMAND).sendKeys("c").keyUp(Keys.COMMAND).build().perform();
-
         //Press the TAB Key to Switch Focus to Permanent Address
         actions.sendKeys(Keys.TAB).build().perform();
 

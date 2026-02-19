@@ -22,7 +22,7 @@ public class HandleMouseEvents extends CommonConfig {
 
         System.setProperty("webdriver.chrome.driver", chromePath());
         driver = new ChromeDriver();
-        driver.get("https://demoqa.com/slider/"); //  https://demoqa.com/slider/    https://demoqa.com/menu/"
+        driver.get("https://demoqa.com"); //  https://demoqa.com/slider/    https://demoqa.com/menu/"
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().window().maximize();
 //        moveCursorMiddleOfElement();
