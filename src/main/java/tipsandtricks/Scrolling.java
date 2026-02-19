@@ -25,14 +25,14 @@ public class Scrolling extends CommonConfig {
 
         System.setProperty("webdriver.chrome.driver", chromePath());
         driver = new ChromeDriver();
-        driver.get("https://www.aircanada.com");
+        driver.get("https://skillupautomation.com/");
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         Thread.sleep(3000);
-//        scrollMethodsByPixelsDown();
-//        scrollMethodsByPixelsUp();
-//        scrollUntilElementVisible();
-//        scrollBottomOfPage();
+        scrollMethodsByPixelsDown();
+        scrollMethodsByPixelsUp();
+        scrollUntilElementVisible();
+        scrollBottomOfPage();
         smoothScrollBottomOfPage();
         tearDown();
     }
@@ -51,12 +51,12 @@ public class Scrolling extends CommonConfig {
 
     private static void scrollUntilElementVisible() throws InterruptedException {
         //Locating element by xpath and store in variable "Element"
-        WebElement Element = driver.findElement(By.xpath("//div[@class='ngx-ac-container ngx-ac-libra-footer-copyright-section']"));
+        WebElement Element = driver.findElement(By.xpath("//footer//a[contains(@href,'about')]"));
 
         // Scrolling down the page till the element is found
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView(true);", Element);
-        Thread.sleep(2000);
+        Thread.sleep(10000);
     }
 
     private static void scrollBottomOfPage(){
@@ -66,7 +66,7 @@ public class Scrolling extends CommonConfig {
 
     private static void smoothScrollBottomOfPage(){
         //Locating element by xpath and store in variable "Element"
-        WebElement Element = driver.findElement(By.xpath("//div[@class='ngx-ac-container ngx-ac-libra-footer-copyright-section']"));
+        WebElement Element = driver.findElement(By.xpath("//footer//a[contains(@href,'about')]"));
 
         // Scrolling down the page till the element is found
         JavascriptExecutor js = (JavascriptExecutor) driver;
