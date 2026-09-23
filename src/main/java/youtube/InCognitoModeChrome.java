@@ -14,7 +14,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-public class IncognitoModeChrome extends CommonConfig {
+class IncognitoModeChrome extends CommonConfig {
     static WebDriver driver;
 
     public static void main(String[] args) throws IOException {

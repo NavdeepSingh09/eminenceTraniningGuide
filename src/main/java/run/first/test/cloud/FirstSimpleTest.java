@@ -41,8 +41,8 @@ public class FirstSimpleTest {
     private void setUp() {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("browserName", "chrome");
-        capabilities.setCapability("version", "70.0");
-        capabilities.setCapability("platform", "win10"); // If this cap isn't specified, it will just get any available one.
+        capabilities.setCapability("version", "143.0");
+        capabilities.setCapability("platform", "win11"); // If this cap isn't specified, it will just get any available one.
         capabilities.setCapability("build", "BrowserTest");
         capabilities.setCapability("name", "SkillUpAutomation");
         try {
