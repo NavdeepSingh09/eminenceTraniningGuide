@@ -13,17 +13,17 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 
 public class HandleMouseEvents extends CommonConfig {
     static WebDriver driver;
 
     public static void main(String[] args) throws IOException, InterruptedException {
 
-        System.setProperty("webdriver.chrome.driver", chromePath());
+        // System.setProperty("webdriver.chrome.driver", chromePath());
         driver = new ChromeDriver();
         driver.get("https://demoqa.com"); //  https://demoqa.com/slider/    https://demoqa.com/menu/"
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         driver.manage().window().maximize();
 //        moveCursorMiddleOfElement();
         moveCursorOffset();

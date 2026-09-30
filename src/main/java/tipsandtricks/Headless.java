@@ -43,7 +43,7 @@ public class Headless extends CommonConfig {
 
     private static void HeadlessChrome() throws IOException {
         //declare the chrome driver from the local machine location
-        System.setProperty("webdriver.chrome.driver", chromePath());
+        // System.setProperty("webdriver.chrome.driver", chromePath());
 
         //create object of chrome options
         ChromeOptions options = new ChromeOptions();
