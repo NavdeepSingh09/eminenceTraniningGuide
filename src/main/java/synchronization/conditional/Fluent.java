@@ -18,18 +18,17 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.IOException;
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 public class Fluent extends CommonConfig {
     static WebDriver driver;
 
     public static void main(String[] args) throws IOException, InterruptedException {
 
-        System.setProperty("webdriver.chrome.driver", chromePath());
+        // System.setProperty("webdriver.chrome.driver", chromePath());
         driver = new ChromeDriver();
         driver.get("https://demoqa.com/radio-button");
         // Implicit wait declaration
-        driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
         driver.manage().window().maximize();
         fluentWait();
         tearDown(driver);

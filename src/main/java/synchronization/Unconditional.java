@@ -19,7 +19,7 @@ public class Unconditional extends CommonConfig {
 
     public static void main(String[] args) throws IOException, InterruptedException {
 
-        System.setProperty("webdriver.chrome.driver", chromePath());
+        // System.setProperty("webdriver.chrome.driver", chromePath());
         driver = new ChromeDriver();
         driver.get("https://demoqa.com/radio-button");
         driver.manage().window().maximize();

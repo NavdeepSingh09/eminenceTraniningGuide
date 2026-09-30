@@ -13,25 +13,25 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 
 public class Explicit extends CommonConfig {
     static WebDriver driver;
 
     public static void main(String[] args) throws IOException, InterruptedException {
 
-        System.setProperty("webdriver.chrome.driver", chromePath());
+        // System.setProperty("webdriver.chrome.driver", chromePath());
         driver = new ChromeDriver();
         driver.get("https://demoqa.com/radio-button");
         // Implicit wait declaration
-        driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
         driver.manage().window().maximize();
         explicitWait();
         tearDown(driver);
     }
 
     private static void explicitWait() throws InterruptedException {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         System.out.println("Explicit wait here for maximum 10 second to visible of element");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[@class='mt-3']")));
 //        driver.findElement(By.xpath("//p[@class='mt-3']")).isEnabled();
