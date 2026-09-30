@@ -20,17 +20,17 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 
 public class CaptureScreenshots extends CommonConfig {
     static WebDriver driver;
 
     public static void main(String[] args) throws IOException, InterruptedException {
 
-        System.setProperty("webdriver.chrome.driver", chromePath());
+        // System.setProperty("webdriver.chrome.driver", chromePath());
         driver = new ChromeDriver();
         driver.get("https://www.eminenceautomationlabs.com/");
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         driver.manage().window().maximize();
 //        captureScreenshotsVisiblePage("Gagan");
 //        captureScreenshotsFullPage();

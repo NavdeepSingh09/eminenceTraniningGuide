@@ -10,7 +10,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Base64;
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 import org.testng.annotations.Test;
 
 public class FirstSimpleTest {
@@ -25,7 +25,7 @@ public class FirstSimpleTest {
 //        System.setProperty("webdriver.chrome.driver","/Users/sukhdeep/Desktop/IT/Chrome/chromedriver");
 //        WebDriver driver = new ChromeDriver();
         driver.get("https://skillupautomation.com");
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS) ;
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20)) ;
         driver.manage().window().maximize();
         driver.quit();
     }
@@ -33,7 +33,7 @@ public class FirstSimpleTest {
     public void execute(){
         new FirstSimpleTest().setUp();
         driver.get("https://skillupautomation.com");
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS) ;
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20)) ;
         driver.manage().window().maximize();
         driver.quit();
     }

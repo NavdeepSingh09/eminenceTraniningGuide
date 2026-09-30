@@ -10,7 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 
 public class WindowsMacDriverSelection extends CommonConfig {
     static WebDriver driver;
@@ -18,7 +18,7 @@ public class WindowsMacDriverSelection extends CommonConfig {
     public static void main(String[] args) throws IOException {
         setupWebDriver();
         driver.get("https://skillupautomation.com/");
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.manage().window().maximize();
         tearDown(driver);
     }

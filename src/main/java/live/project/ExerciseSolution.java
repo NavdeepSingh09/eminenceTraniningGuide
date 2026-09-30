@@ -14,7 +14,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.io.IOException;
 import java.text.DecimalFormat;
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 
 import static org.junit.Assert.assertTrue;
 
@@ -26,10 +26,10 @@ public class ExerciseSolution extends CommonConfig {
 
     public static void main(String[] args) throws IOException, InterruptedException {
 
-        System.setProperty("webdriver.chrome.driver", chromePath());
+        // System.setProperty("webdriver.chrome.driver", chromePath());
         driver = new ChromeDriver();
         driver.get("https://www.saucedemo.com/");
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         driver.manage().window().maximize();
         verifyLoginPageErrorMessage();
         loginWithCredentials();

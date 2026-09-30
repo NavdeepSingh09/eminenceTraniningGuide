@@ -9,7 +9,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 
 public class NameAndId {
 
@@ -17,7 +17,7 @@ public class NameAndId {
         System.setProperty("webdriver.chrome.driver","/Users/sukhdeep/Desktop/IT/Chrome/chromedriver");
         WebDriver driver = new ChromeDriver();
         driver.get("https://demoqa.com/text-box");//http://codeshre.io/MN9jAn
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS) ;
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20)) ;
         driver.manage().window().maximize();
         boolean inputTag= driver.findElement(By.tagName("iput")).isDisplayed();
         System.out.println("Boolean value ="+inputTag);

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 
 public class selenium {
 
@@ -19,7 +19,7 @@ public class selenium {
         System.setProperty("webdriver.chrome.driver","/Users/sukhdeep/Desktop/Chrome/chromedriver");
         WebDriver driver = new ChromeDriver();
         driver.get("https://demoqa.com/text-box");//http://codeshre.io/MN9jAn
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS) ;
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20)) ;
         driver.manage().window().maximize();
 
         driver.findElement(By.id("userName-label")).isDisplayed();
