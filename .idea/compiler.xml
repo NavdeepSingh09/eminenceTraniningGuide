@@ -9,8 +9,5 @@
         <module name="new_project_mvn" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="new_project_mvn" target="8" />
-    </bytecodeTargetLevel>
   </component>
 </project>
